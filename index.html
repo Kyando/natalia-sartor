@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imagens de Referência — O Florescer Afro-Identitário</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #F5F5F0; color: #212121; }
+
+  /* ── CAPA ─────────────────────────────────────── */
+  .cover {
+    position: relative; height: 480px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cover-img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 30%; filter: brightness(0.42);
+  }
+  .cover-text {
+    position: relative; z-index: 2; text-align: center; color: white; padding: 20px 40px;
+  }
+  .cover-text .badge {
+    display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px; padding: 6px 18px; font-size: 0.78em; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  .cover-text h1 { font-size: 2.6em; font-weight: bold; letter-spacing: 1px; line-height: 1.2; margin-bottom: 14px; }
+  .cover-text h2 { font-size: 1.1em; font-weight: normal; opacity: 0.85; margin-bottom: 18px; }
+  .cover-text .sub { font-size: 0.82em; opacity: 0.65; }
+  .cover-credit {
+    position: absolute; bottom: 10px; right: 14px; z-index: 3;
+    font-size: 0.68em; color: rgba(255,255,255,0.55);
+  }
+
+  /* ── CONTAINER ───────────────────────────────── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+  /* ── SEÇÃO DE ATIVIDADE ───────────────────────── */
+  .activity-section { margin-bottom: 56px; }
+  .activity-header {
+    padding: 16px 24px; border-radius: 8px 8px 0 0;
+    color: white; font-size: 1.15em; font-weight: bold; line-height: 1.3;
+  }
+  .atv1 .activity-header { background: linear-gradient(90deg, #5D4037, #8D6E63); }
+  .atv2 .activity-header { background: linear-gradient(90deg, #1B5E20, #388E3C); }
+  .atv3 .activity-header { background: linear-gradient(90deg, #4A148C, #7B1FA2); }
+  .atv4 .activity-header { background: linear-gradient(90deg, #BF360C, #E64A19); }
+
+  .activity-body {
+    background: white; border-radius: 0 0 8px 8px;
+    padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .activity-desc { margin-bottom: 22px; font-size: 0.88em; color: #616161; line-height: 1.5; }
+
+  /* ── GRID DE IMAGENS ─────────────────────────── */
+  .images-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .img-card {
+    border-radius: 8px; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12); background: #FAFAFA;
+  }
+  .img-card img { width: 100%; height: 230px; object-fit: cover; display: block; }
+  .img-caption { padding: 12px 14px; border-top: 3px solid; line-height: 1.4; }
+  .atv1 .img-caption { border-color: #8D6E63; }
+  .atv2 .img-caption { border-color: #388E3C; }
+  .atv3 .img-caption { border-color: #7B1FA2; }
+  .atv4 .img-caption { border-color: #E64A19; }
+
+  .img-caption .label {
+    font-size: 0.72em; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 4px;
+  }
+  .atv1 .label { color: #5D4037; }
+  .atv2 .label { color: #1B5E20; }
+  .atv3 .label { color: #4A148C; }
+  .atv4 .label { color: #BF360C; }
+
+  .img-caption .desc { font-size: 0.83em; color: #424242; margin-bottom: 6px; }
+  .img-caption .credit { font-size: 0.72em; color: #9E9E9E; }
+  .img-caption .credit a { color: #9E9E9E; text-decoration: none; }
+  .img-caption .credit a:hover { text-decoration: underline; }
+
+  /* ── REFERÊNCIAS ─────────────────────────────── */
+  .references-section {
+    background: white; border-radius: 8px; padding: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 40px;
+  }
+  .references-section h2 {
+    font-size: 1.15em; font-weight: bold; color: #1A237E;
+    border-bottom: 2px solid #1A237E; padding-bottom: 10px; margin-bottom: 22px;
+  }
+  .ref-group { margin-bottom: 22px; }
+  .ref-group h3 { font-size: 0.88em; font-weight: bold; color: #424242; margin-bottom: 10px; }
+  .ref-item { font-size: 0.8em; color: #424242; margin-bottom: 7px; line-height: 1.5; padding-left: 16px; border-left: 2px solid #EEEEEE; }
+  .ref-item a { color: #1565C0; word-break: break-all; }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  .footer { text-align: center; padding: 28px; font-size: 0.78em; color: #9E9E9E; background: #ECEFF1; }
+
+  @media print {
+    .activity-section { page-break-after: always; }
+    body { background: white; }
+    .cover, .activity-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ CAPA ══════════════ -->
+<div class="cover">
+  <img class="cover-img"
+    src="https://images.pexels.com/photos/9652566/pexels-photo-9652566.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    alt="Menina com cabelo afro segurando uma flor — imagem de capa do protótipo O Florescer Afro-Identitário"
+    loading="eager">
+  <div class="cover-text">
+    <div class="badge">🌸 Protótipo de Ensino · PUCPR · 1º Ano EF</div>
+    <h1>O Florescer Afro-Identitário</h1>
+    <h2>Imagens de Referência por Atividade</h2>
+    <div class="sub">Lei 10.639/2003 · Diversidade, identidade e pertencimento afro-brasileiro<br>
+    Imagens: Pexels (licença gratuita) · 4 Atividades · 16 imagens</div>
+  </div>
+  <div class="cover-credit">Foto de capa: Ron Lach / Pexels</div>
+</div>
+
+<div class="container">
+
+  <!-- ══════════════ ATIVIDADE 1 ══════════════ -->
+  <div class="activity-section atv1">
+    <div class="activity-header">ATIVIDADE 1 — Quem sou eu? Minha história floresce</div>
+    <div class="activity-body">
+      <p class="activity-desc">
+        <strong>Foco pedagógico:</strong> identidade negra, autorretrato, cabelo afro, pertencimento afro-brasileiro.
+        Leitura do livro <em>Amoras</em> (Emicida), roda de conversa, escrita emergente e produção do autorretrato com frase de identidade "Eu sou...".
+      </p>
+      <div class="images-grid">
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/18069194/pexels-photo-18069194/free-photo-of-girl-with-afro-sitting.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Menina com cabelo afro sentada, braço estendido" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 1 — Identidade e beleza negra</div>
+            <div class="desc">Menina com cabelo afro sentada ao lado de cesto de vime — autoconfiança e pertencimento</div>
+            <div class="credit">Foto: <strong>The Oluseyi</strong> /
+              <a href="https://www.pexels.com/photo/girl-with-afro-sitting-18069194/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/30359459/pexels-photo-30359459/free-photo-of-captivating-outdoor-portrait-of-young-girl.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Retrato ao ar livre de menina com cabelo cacheado em luz natural" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 1 — Retrato e identidade</div>
+            <div class="desc">Retrato de menina com cabelo cacheado ao ar livre em luz natural — inspiração para o autorretrato</div>
+            <div class="credit">Foto: <strong>Tony Meyers</strong> /
+              <a href="https://www.pexels.com/photo/captivating-outdoor-portrait-of-young-girl-30359459/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/8421990/pexels-photo-8421990.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Close de criança com cabelo afro cacheado em fundo verde-água" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 1 — Afro e pertencimento</div>
+            <div class="desc">Close de criança com cabelo afro — celebração das características físicas afro-brasileiras</div>
+            <div class="credit">Foto: <strong>Pavel Danilyuk</strong> /
+              <a href="https://www.pexels.com/photo/close-up-photo-of-a-girl-with-afro-hair-8421990/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/29846292/pexels-photo-29846292/free-photo-of-family-bonding-through-hair-styling-activity.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Mãe e filha em momento de cuidado com o cabelo, ambiente aconchegante" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 1 — Laço familiar e cultura</div>
+            <div class="desc">Mãe e filha em momento de cuidado com o cabelo — afeto, ancestralidade e identidade familiar</div>
+            <div class="credit">Foto: <strong>Ario Stories</strong> /
+              <a href="https://www.pexels.com/photo/family-bonding-through-hair-styling-activity-29846292/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788574068367/amoras.jpg"
+            alt="Capa do livro Amoras de Emicida, ilustrado por Aldo Fabrini — Companhia das Letrinhas" loading="lazy"
+            style="object-position: center top;">
+          <div class="img-caption">
+            <div class="label">Atividade 1 — Livro de referência: <em>Amoras</em></div>
+            <div class="desc">Capa do livro <em>Amoras</em> (Emicida, il. Aldo Fabrini) — obra central da atividade 1, que narra a identidade afro-brasileira por meio da poesia e da imagem</div>
+            <div class="credit">Imagem: <strong>Companhia das Letrinhas</strong> /
+              <a href="https://www.companhiadasletras.com.br/livro/9788574068367/amoras" target="_blank">companhiadasletras.com.br</a>
+              · Reprodução para fins educacionais
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ ATIVIDADE 2 ══════════════ -->
+  <div class="activity-section atv2">
+    <div class="activity-header">ATIVIDADE 2 — Histórias que vieram de longe</div>
+    <div class="activity-body">
+      <p class="activity-desc">
+        <strong>Foco pedagógico:</strong> tradição oral africana, contação de histórias, localização do continente africano no mapa-múndi, vocabulário afro-brasileiro, brincadeiras e jogos de matriz africana (Mancala, cantigas).
+      </p>
+      <div class="images-grid">
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/13058620/pexels-photo-13058620.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Grupo de crianças africanas sentadas em roda ao redor do fogo compartilhando histórias" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 2 — Roda de histórias</div>
+            <div class="desc">Crianças africanas reunidas ao redor do fogo — tradição oral e transmissão de saberes ancestrais</div>
+            <div class="credit">Foto: <strong>King Zubby</strong> /
+              <a href="https://www.pexels.com/photo/group-of-people-sitting-on-brown-ground-13058620/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/31763369/pexels-photo-31763369/free-photo-of-african-children-studying-outdoors-in-rural-setting.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Crianças africanas e anciãos em atividade de aprendizagem ao ar livre em contexto rural" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 2 — Transmissão de saberes</div>
+            <div class="desc">Crianças e anciãos aprendendo ao ar livre — saberes comunitários e transmissão intergeracional</div>
+            <div class="credit">Foto: <strong>Matazu Multimedia</strong> /
+              <a href="https://www.pexels.com/photo/african-children-studying-outdoors-in-rural-setting-31763369/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/32961009/pexels-photo-32961009/free-photo-of-african-cultural-gathering-traditional-attire.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Reunião cultural com grupo de crianças em trajes tradicionais africanos coloridos" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 2 — Cultura e tradição africana</div>
+            <div class="desc">Grupo de crianças em trajes tradicionais africanos — diversidade cultural do continente africano</div>
+            <div class="credit">Foto: <strong>Finix Photographer</strong> /
+              <a href="https://www.pexels.com/photo/african-cultural-gathering-traditional-attire-32961009/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/16175760/pexels-photo-16175760/free-photo-of-boy-and-girl-in-traditional-clothing.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Menino e menina com vestimentas tradicionais africanas e acessórios coloridos" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 2 — Vestimentas e herança cultural</div>
+            <div class="desc">Crianças com vestimentas tradicionais africanas — celebração da herança cultural e da ancestralidade</div>
+            <div class="credit">Foto: <strong>Ali Drabo</strong> /
+              <a href="https://www.pexels.com/photo/boy-and-girl-in-traditional-clothing-16175760/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ ATIVIDADE 3 ══════════════ -->
+  <div class="activity-section atv3">
+    <div class="activity-header">ATIVIDADE 3 — Meu jardim afro-identitário</div>
+    <div class="activity-body">
+      <p class="activity-desc">
+        <strong>Foco pedagógico:</strong> produção coletiva do mural "Jardim Afro-Identitário da Turma", flores identitárias em papel colorido, escrita emergente de legendas ("Eu sou...", "Minha família é..."), apresentação oral para colegas e responsáveis.
+      </p>
+      <div class="images-grid">
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/6941457/pexels-photo-6941457.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Duas meninas juntas realizando atividade artística criativa" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 3 — Arte coletiva</div>
+            <div class="desc">Crianças fazendo atividade artística juntas — criatividade, colaboração e amizade no mural</div>
+            <div class="credit">Foto: <strong>Artem Podrez</strong> /
+              <a href="https://www.pexels.com/photo/two-kids-doing-some-artwork-6941457/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/19720247/pexels-photo-19720247/free-photo-of-girl-drawing-on-wall.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Criança desenhando em mural colorido de parede em ambiente interno" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 3 — Mural identitário</div>
+            <div class="desc">Criança desenhando em mural de parede — produção visual do Jardim Afro-Identitário da turma</div>
+            <div class="credit">Foto: <strong>Ashraf Khan</strong> /
+              <a href="https://www.pexels.com/photo/girl-drawing-on-wall-19720247/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/8535626/pexels-photo-8535626.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Duas meninas recortando papel colorido em sala de aula de educação infantil" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 3 — Recorte e colagem das flores</div>
+            <div class="desc">Meninas recortando papel colorido em sala de aula — confecção das flores identitárias do mural</div>
+            <div class="credit">Foto: <strong>Ksenia Chernaya</strong> /
+              <a href="https://www.pexels.com/photo/two-girls-cutting-paper-in-the-classroom-8535626/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <img src="https://images.pexels.com/photos/36835943/pexels-photo-36835943/free-photo-of-colorful-child-paintings-on-bulletin-board.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Pinturas coloridas de crianças expostas em quadro de avisos — mural de trabalhos artísticos" loading="lazy">
+          <div class="img-caption">
+            <div class="label">Atividade 3 — Exposição do jardim coletivo</div>
+            <div class="desc">Pinturas coloridas de crianças expostas em mural — resultado visual do jardim afro-identitário</div>
+            <div class="credit">Foto: <strong>Melike</strong> /
+              <a href="https://www.pexels.com/photo/colorful-child-paintings-on-bulletin-board-36835943/" target="_blank">Pexels</a>
+              · Uso gratuito
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ REFERÊNCIAS ══════════════ -->
+  <div class="references-section">
+    <h2>📚 REFERÊNCIAS DAS IMAGENS</h2>
+
+    <div class="ref-group">
+      <h3>🖼️ Imagem de Capa</h3>
+      <div class="ref-item">
+        LACH, Ron. <em>A Girl with Afro Hair Holding a Flower</em>. Pexels, 2022. Disponível em:
+        <a href="https://www.pexels.com/photo/a-girl-with-afro-hair-holding-a-flower-9652566/" target="_blank">
+          https://www.pexels.com/photo/a-girl-with-afro-hair-holding-a-flower-9652566/</a>. Acesso em: jun. 2025.
+      </div>
+    </div>
+
+    <div class="ref-group">
+      <h3>📍 Atividade 1 — Quem sou eu? Minha história floresce</h3>
+      <div class="ref-item">
+        OLUSEYI, The. <em>Girl with Afro Sitting</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/girl-with-afro-sitting-18069194/" target="_blank">
+          https://www.pexels.com/photo/girl-with-afro-sitting-18069194/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        MEYERS, Tony. <em>Captivating Outdoor Portrait of Young Girl</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/captivating-outdoor-portrait-of-young-girl-30359459/" target="_blank">
+          https://www.pexels.com/photo/captivating-outdoor-portrait-of-young-girl-30359459/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        DANILYUK, Pavel. <em>Close Up Photo of a Girl with Afro Hair</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/close-up-photo-of-a-girl-with-afro-hair-8421990/" target="_blank">
+          https://www.pexels.com/photo/close-up-photo-of-a-girl-with-afro-hair-8421990/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        STORIES, Ario. <em>Family Bonding Through Hair Styling Activity</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/family-bonding-through-hair-styling-activity-29846292/" target="_blank">
+          https://www.pexels.com/photo/family-bonding-through-hair-styling-activity-29846292/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        EMICIDA; FABRINI, Aldo (il.). <em>Amoras</em>. São Paulo: Companhia das Letrinhas, 2018. Capa disponível em:
+        <a href="https://www.companhiadasletras.com.br/livro/9788574068367/amoras" target="_blank">
+          https://www.companhiadasletras.com.br/livro/9788574068367/amoras</a>. Acesso em: jun. 2025.
+      </div>
+    </div>
+
+    <div class="ref-group">
+      <h3>📍 Atividade 2 — Histórias que vieram de longe</h3>
+      <div class="ref-item">
+        ZUBBY, King. <em>Group of People Sitting on Brown Ground</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/group-of-people-sitting-on-brown-ground-13058620/" target="_blank">
+          https://www.pexels.com/photo/group-of-people-sitting-on-brown-ground-13058620/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        MULTIMEDIA, Matazu. <em>African Children Studying Outdoors in Rural Setting</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/african-children-studying-outdoors-in-rural-setting-31763369/" target="_blank">
+          https://www.pexels.com/photo/african-children-studying-outdoors-in-rural-setting-31763369/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        PHOTOGRAPHER, Finix. <em>African Cultural Gathering Traditional Attire</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/african-cultural-gathering-traditional-attire-32961009/" target="_blank">
+          https://www.pexels.com/photo/african-cultural-gathering-traditional-attire-32961009/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        DRABO, Ali. <em>Boy and Girl in Traditional Clothing</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/boy-and-girl-in-traditional-clothing-16175760/" target="_blank">
+          https://www.pexels.com/photo/boy-and-girl-in-traditional-clothing-16175760/</a>. Acesso em: jun. 2025.
+      </div>
+    </div>
+
+    <div class="ref-group">
+      <h3>📍 Atividade 3 — Meu jardim afro-identitário</h3>
+      <div class="ref-item">
+        PODREZ, Artem. <em>Two Kids Doing Some Artwork</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/two-kids-doing-some-artwork-6941457/" target="_blank">
+          https://www.pexels.com/photo/two-kids-doing-some-artwork-6941457/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        KHAN, Ashraf. <em>Girl Drawing on Wall</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/girl-drawing-on-wall-19720247/" target="_blank">
+          https://www.pexels.com/photo/girl-drawing-on-wall-19720247/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        CHERNAYA, Ksenia. <em>Two Girls Cutting Paper in the Classroom</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/two-girls-cutting-paper-in-the-classroom-8535626/" target="_blank">
+          https://www.pexels.com/photo/two-girls-cutting-paper-in-the-classroom-8535626/</a>. Acesso em: jun. 2025.
+      </div>
+      <div class="ref-item">
+        MELIKE. <em>Colorful Child Paintings on Bulletin Board</em>. Pexels. Disponível em:
+        <a href="https://www.pexels.com/photo/colorful-child-paintings-on-bulletin-board-36835943/" target="_blank">
+          https://www.pexels.com/photo/colorful-child-paintings-on-bulletin-board-36835943/</a>. Acesso em: jun. 2025.
+      </div>
+    </div>
+
+    <div style="margin-top:18px; padding:14px; background:#F3E5F5; border-radius:6px; font-size:0.8em; color:#6A1B9A;">
+      <strong>Nota sobre licença:</strong> Todas as imagens foram obtidas no Pexels (pexels.com) sob a
+      <a href="https://www.pexels.com/license/" target="_blank" style="color:#6A1B9A;">Licença Pexels</a>,
+      que permite uso gratuito para fins educacionais e não comerciais, com atribuição ao fotógrafo.
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Protótipo de Ensino <em>O Florescer Afro-Identitário</em> · 1º Ano do Ensino Fundamental · PUCPR<br>
+  Lei 10.639/2003 · Todas as imagens: Pexels (pexels.com) · Uso educacional gratuito com atribuição
+</div>
+
+</body>
+</html>
